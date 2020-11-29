@@ -10,6 +10,7 @@
     "react-scripts": "3.4.4"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -28,5 +29,6 @@
     ]
   },
   "devDependencies": {
+    "source-map-explorer": "^2.5.0"
   }
 }
