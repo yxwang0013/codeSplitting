@@ -3,16 +3,15 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./styles/app.css";
-
 import Header from "./components/header";
 import Footer from "./components/footer";
 
-import Home from "./components/home";
 
-import Inbox from "./components/inbox";
-import Register from "./components/register";
-import Contact from "./components/contact";
 const About = lazy(() => import("./components/about"));
+const Home = lazy(() => import("./components/home"));
+const Register = lazy(() => import("./components/register"));
+const Contact = lazy(() => import("./components/contact"));
+const Inbox = lazy(() => import("./components/inbox"));
 const App = () => {
   return (
     <BrowserRouter>
@@ -21,6 +20,10 @@ const App = () => {
         <div className="container">
           <Suspense fallback={<h1>Loading page....</h1>}>
             <Switch>
+              <Route path="/inbox" component={Inbox} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/register" component={Register} />
+              <Route path="/home" component={Home} />
               <Route path="/about" component={About} />
               <Route path="/register" component={Register} />
               <Route path="/contact" component={Contact} />
